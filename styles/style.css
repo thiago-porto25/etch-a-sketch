@@ -1,0 +1,55 @@
+html {
+    background: linear-gradient(62deg, rgb(37, 16, 16), rgb(38, 43, 73));
+}
+
+#titleContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#titleContainer h1 {
+    font-size: 45px;
+    color: antiquewhite;
+    text-shadow: 3px 5px black;
+}
+
+#titleContainer button {
+    background-color: rgb(21, 21, 37);
+    border-radius: 3px;
+    border: 1px solid rgb(80, 27, 27);
+    box-shadow: 2px 2px black;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 3px 2px black;
+    font-size: 15px;
+}
+
+#gameSection {
+    display: flex;
+    justify-content: center;
+    padding: 20px 100px 20px 100px;
+    background-color: rgba(53, 18, 9, 0.589);
+    border: 2px solid rgba(7, 2, 14, 0.678);
+}
+
+#divsContainer{
+    display: flex;
+    width: 450px;
+    height: 450px;
+    justify-content: center;
+}
+
+#divsContainer div {
+    flex: 1;
+    border: 1px solid red;
+}
+
+#divsContainer div:hover {
+    background-color: black;
+}
