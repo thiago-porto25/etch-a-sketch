@@ -27,8 +27,19 @@ function divCreator(squares) {
     for (i = 0; i < squares; i++) {
         const div = document.createElement("div");
         divsContainer.appendChild(div);
-        div.addEventListener("mouseover", () => div.style.backgroundColor = "black");
+
+        if (Math.floor(Math.random()*10) === 5) {
+            div.addEventListener("mouseover", () => div.style.backgroundColor = "black");
+        }
+        else {
+            div.addEventListener("mouseover", () => div.style.backgroundColor = colorCreator());
+        }
     }
+}
+
+function colorCreator() {
+    let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
 }
 
 divCreator(256);
