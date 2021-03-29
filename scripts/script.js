@@ -1,6 +1,3 @@
-//preciso saber como fazer os divs ficarem em grid certinho
-//aprender como mudar a cor pra sempre depois do mouse passar por cima
-
 const divsContainer = document.querySelector("#divsContainer");
 const newGameButton = document.querySelector("button");
 
@@ -13,10 +10,10 @@ function newGame() {
         divsContainer.removeChild(divsContainer.lastChild);
     }
 
-    while (isNaN(squares)) {
+    while (isNaN(squares) || squares > 100) {
         squares = prompt("Please, enter a how many squares per side would you like!", "");
 
-        if(squares === undefined) return;
+        if (squares === undefined) return;
     }
 
     squares = squares * squares;
@@ -24,11 +21,14 @@ function newGame() {
 }
 
 function divCreator(squares) {
+    divsContainer.style.setProperty("--grid-height", Math.sqrt(squares));
+    divsContainer.style.setProperty("--grid-length", Math.sqrt(squares));
 
     for (i = 0; i < squares; i++) {
         const div = document.createElement("div");
         divsContainer.appendChild(div);
+        div.addEventListener("mouseover", () => div.style.backgroundColor = "black");
     }
 }
 
-divCreator(36);
+divCreator(256);
