@@ -3,6 +3,8 @@ const newGameButton = document.querySelector("button");
 
 newGameButton.addEventListener("click", newGame);
 
+
+
 function newGame() {
     let squares;
 
@@ -11,14 +13,16 @@ function newGame() {
     }
 
     while (isNaN(squares) || squares > 100) {
-        squares = prompt("Please, enter a how many squares per side would you like!", "");
+        squares = prompt("Please, enter how many squares per side would you like!", "");
 
         if (squares === undefined) return;
     }
 
-    squares = squares * squares;
+    squares *= squares;
     divCreator(squares);
 }
+
+
 
 function divCreator(squares) {
     divsContainer.style.setProperty("--grid-height", Math.sqrt(squares));
